@@ -12,4 +12,13 @@ router.get("/blogs", async (req, res) => {
   }
 });
 
+router.get("/blogs/new", (req, res) => {
+  res.render("new");
+});
+
+router.post("/blogs", async (req, res) => {
+  const blog = await Blog.create(req.body);
+  res.redirect("/blogs");
+});
+
 module.exports = router;
