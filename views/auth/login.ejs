@@ -1,0 +1,40 @@
+<%- include("../partials/header")%>
+
+    <link rel="stylesheet" href="/css/login.css">
+    <div class="container ">
+
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="/images/blogging.png" class="img" alt="blogging" />
+            </div>
+            <div class="col-lg-6 logincontainer">
+                <h6 class="display-6 ">Login</h6>
+
+                <form class="mt-5  " action="/login" method="POST">
+
+                    <div class="mb-3 center">
+                        <input type="text" class="form-control " id="username" placeholder="&#xf0e0; Email"
+                            style="font-family:Arial, FontAwesome" required name="username">
+                    </div>
+                    <div class="mb-3 center">
+                        <input type="password" class="form-control " id="password" placeholder=" &#xf023;password"
+                            style="font-family:Arial , FontAwesome" name="password">
+                    </div>
+                    <div class="d-grid gap-2 center">
+                        <button class="btn btn-primary" type="submit">Login</button>
+                    </div>
+                    <div class="mb-3 mt-3 center">
+                        <p><a href="/register">Need an account ? Register here</a></p>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <%- include("../partials/footer")%>

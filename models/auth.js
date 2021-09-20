@@ -1,35 +1,35 @@
 const { Sequelize, DataTypes } = require("sequelize");
 
-const Blog = sequelize.define("Blog", {
-  // Model attributes are defined here
+const User = sequelize.define("user", {
   id: {
     type: DataTypes.UUID,
     defaultValue: Sequelize.UUIDV4,
     primaryKey: true,
   },
-
-  title: {
+  firstname: {
     type: DataTypes.STRING,
-    allowNull: false,
   },
-
-  body: {
+  lastname: {
     type: DataTypes.STRING,
-    // allowNull defaults to true
   },
-
-  img: {
+  username: {
+    type: DataTypes.STRING,
+  },
+  password: {
+    type: DataTypes.STRING,
+  },
+  email: {
     type: DataTypes.STRING,
   },
 });
 
-Blog.sync()
+User.sync()
   .then(() => {
-    console.log("Table created Successfully");
+    console.log("Table create successfully 2");
   })
   .catch((e) => {
     console.log(e.message);
-    console.log("Cannot Create the table");
+    console.log("Table cannot be created");
   });
 
-module.exports = Blog;
+module.exports = User;
