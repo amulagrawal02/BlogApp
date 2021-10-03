@@ -1,0 +1,48 @@
+<%- include("../partials/header")%>
+    <link rel="stylesheet" href="/css/signin.css">
+
+    <div class="container ">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="/images/signup.svg" class="img" alt="signup" />
+            </div>
+            <div class="col-lg-6 registercontainer">
+                <h6 class="display-6 text-center" style="font-weight: bold;">
+                    <i class="fas fa-user-plus"></i> Register
+                </h6>
+
+                <form class="mt-5" action="/register" method="POST">
+                    <div class="mb-3 center">
+                        <input type="text" class="form-control" placeholder="&#xf5b7; Firstname"
+                            style="font-family:Arial, FontAwesome" name="firstname">
+                    </div>
+                    <div class="mb-3 center">
+                        <input type="text" class="form-control" placeholder="&#xf5b7; Lastname"
+                            style="font-family:Arial, FontAwesome" name="lastname">
+                    </div>
+                    <div class="mb-3 center">
+                        <input type="email" class="form-control" placeholder="&#xf0e0; Email" name="email"
+                            style="font-family:Arial, FontAwesome">
+                    </div>
+                    <div class="mb-3 center">
+                        <input type="text" class="form-control" id="username" placeholder="&#xf1fa; username"
+                            style="font-family:Arial, FontAwesome" name="username">
+                    </div>
+                    <div class="mb-3 center">
+                        <input type="password" class="form-control" id="password" placeholder="&#xf023; password"
+                            style="font-family:Arial, FontAwesome" name="password" name="password">
+                    </div>
+
+                    <div class="d-grid gap-2 center">
+                        <button type="submit" class="btn btn-primary"><i class="far fa-paper-plane"></i>
+                            Register</button>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <p><a href="/login">Already have an account ? Login here</a></p>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+        <%- include("../partials/footer")%>

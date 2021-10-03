@@ -2,6 +2,10 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const connectDB = require("./db");
+const session = require("express-session");
+
+const User = require("./models/auth");
+const { isLoggedIn } = require("./middleware");
 
 // connecting with database
 
@@ -17,12 +21,29 @@ app.use(express.static(path.join(__dirname, "/public")));
 const blogRouter = require("./routes/blogRoutes");
 const authRouter = require("./routes/authRoutes");
 
-app.get("/", (req, res) => {
-  res.render("home");
+app.use(
+  session({
+    secret: "keyboardcat",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
+const passport = require("passport");
+const passportLocal = require("./config/passport-local-stretgy");
+// initialize passport to use in our application
+app.use(passport.initialize());
+// use middleware to use session
+app.use(passport.session());
+
+app.get("/", isLoggedIn, (req, res) => {
+  return res.render("home");
 });
 
 app.use(blogRouter);
 app.use(authRouter);
+
+//load passport strategies
 
 // for server
 

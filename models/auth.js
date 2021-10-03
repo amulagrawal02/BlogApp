@@ -1,5 +1,5 @@
 const { Sequelize, DataTypes } = require("sequelize");
-
+const passportLocalSequelize = require("passport-local-sequelize");
 const User = sequelize.define("user", {
   id: {
     type: DataTypes.UUID,
@@ -15,10 +15,10 @@ const User = sequelize.define("user", {
   username: {
     type: DataTypes.STRING,
   },
-  password: {
+  email: {
     type: DataTypes.STRING,
   },
-  email: {
+  password: {
     type: DataTypes.STRING,
   },
 });
